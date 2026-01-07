@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Moon, Sun, Menu, X } from 'lucide-react';
+import { Moon, Sun, Menu, X, Linkedin } from 'lucide-react';
 import { useAppStore } from '../store/useAppStore';
 import { Sidebar } from './Sidebar';
 import { useState } from 'react';
@@ -107,12 +107,28 @@ export const Layout = ({ children }: LayoutProps) => {
               </div>
               <span className="text-gray-700 dark:text-gray-300 font-semibold text-sm sm:text-base">QuickTools</span>
             </div>
-            <p className="text-center text-xs sm:text-sm text-gray-600 dark:text-gray-400 max-w-md px-4">
+            <p className="text-center text-xs sm:text-sm text-gray-600 dark:text-gray-400 px-4">
               Lightning-fast developer tools that run entirely in your browser.
             </p>
-            <p className="text-center text-[10px] sm:text-xs text-gray-500 dark:text-gray-500">
-              © 2026 QuickTools. Made with ⚡ for developers.
-            </p>
+            
+            {/* Creator Info */}
+            <div className="flex items-center space-x-2">
+              <span className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">
+                Made with ⚡ by
+              </span>
+              <a
+                href="https://www.linkedin.com/in/bhavyladani"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center space-x-1.5 px-3 py-1.5 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-all group"
+                aria-label="Bhavy Ladani on LinkedIn"
+              >
+                <span className="text-sm font-semibold text-gray-700 dark:text-gray-300 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                  Bhavy Ladani
+                </span>
+                <Linkedin className="w-4 h-4 text-gray-600 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors" />
+              </a>
+            </div>
           </div>
         </div>
       </footer>
