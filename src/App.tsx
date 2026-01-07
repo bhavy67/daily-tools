@@ -39,6 +39,22 @@ import { ColorPaletteGenerator } from './pages/ColorPaletteGenerator';
 import { CssMinifier } from './pages/CssMinifier';
 import { HtmlMinifier } from './pages/HtmlMinifier';
 import { JsMinifier } from './pages/JsMinifier';
+import { PercentageCalculator } from './pages/PercentageCalculator';
+import { UnitConverter } from './pages/UnitConverter';
+import { CurrencyFormatter } from './pages/CurrencyFormatter';
+import { CurrencyConverter } from './pages/CurrencyConverter';
+import { AgeCalculator } from './pages/AgeCalculator';
+import { DateCalculator } from './pages/DateCalculator';
+import { BusinessDaysCalculator } from './pages/BusinessDaysCalculator';
+import { TipCalculator } from './pages/TipCalculator';
+import { BmiCalculator } from './pages/BmiCalculator';
+import { LoanCalculator } from './pages/LoanCalculator';
+import { CalorieCalculator } from './pages/CalorieCalculator';
+import { GrammarChecker } from './pages/GrammarChecker';
+import { LoremIpsumGenerator } from './pages/LoremIpsumGenerator';
+import { RemoveLineBreaks } from './pages/RemoveLineBreaks';
+import { AddLineNumbers } from './pages/AddLineNumbers';
+import { NotFound } from './pages/NotFound';
 
 // Component to scroll to top on route change
 function ScrollToTop() {
@@ -95,6 +111,22 @@ function App() {
           <Route path="/tool/css-minifier" element={<CssMinifier />} />
           <Route path="/tool/html-minifier" element={<HtmlMinifier />} />
           <Route path="/tool/js-minifier" element={<JsMinifier />} />
+          <Route path="/tool/percentage-calculator" element={<PercentageCalculator />} />
+          <Route path="/tool/unit-converter" element={<UnitConverter />} />
+          <Route path="/tool/currency-formatter" element={<CurrencyFormatter />} />
+          <Route path="/tool/currency-converter" element={<CurrencyConverter />} />
+          <Route path="/tool/age-calculator" element={<AgeCalculator />} />
+          <Route path="/tool/date-calculator" element={<DateCalculator />} />
+          <Route path="/tool/business-days-calculator" element={<BusinessDaysCalculator />} />
+          <Route path="/tool/tip-calculator" element={<TipCalculator />} />
+          <Route path="/tool/bmi-calculator" element={<BmiCalculator />} />
+          <Route path="/tool/loan-calculator" element={<LoanCalculator />} />
+          <Route path="/tool/calorie-calculator" element={<CalorieCalculator />} />
+          <Route path="/tool/grammar-checker" element={<GrammarChecker />} />
+          <Route path="/tool/lorem-ipsum-generator" element={<LoremIpsumGenerator />} />
+          <Route path="/tool/remove-line-breaks" element={<RemoveLineBreaks />} />
+          <Route path="/tool/add-line-numbers" element={<AddLineNumbers />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </Layout>
     </Router>
