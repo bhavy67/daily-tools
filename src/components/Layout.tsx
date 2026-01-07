@@ -41,10 +41,10 @@ export const Layout = ({ children }: LayoutProps) => {
                   <span className="text-white font-bold text-sm sm:text-lg">⚡</span>
                 </div>
                 <div className="hidden xs:block">
-                  <h1 className="text-base sm:text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 bg-clip-text text-transparent">
+                  <h1 className="text-base sm:text-xl font-display font-bold bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 bg-clip-text text-transparent tracking-tight">
                     KwikTools
                   </h1>
-                  <p className="text-[10px] sm:text-xs text-gray-500 dark:text-gray-400 hidden sm:block">
+                  <p className="text-[10px] sm:text-xs text-gray-500 dark:text-gray-400 hidden sm:block font-heading">
                     Lightning-fast utilities ⚡
                   </p>
                 </div>
@@ -105,9 +105,9 @@ export const Layout = ({ children }: LayoutProps) => {
               <div className="w-7 h-7 sm:w-8 sm:h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-xs sm:text-sm">⚡</span>
               </div>
-              <span className="text-gray-700 dark:text-gray-300 font-semibold text-sm sm:text-base">KwikTools</span>
+              <span className="text-gray-700 dark:text-gray-300 font-display font-semibold text-sm sm:text-base tracking-tight">KwikTools</span>
             </div>
-            <p className="text-center text-xs sm:text-sm text-gray-600 dark:text-gray-400 px-4">
+            <p className="text-center text-xs sm:text-sm text-gray-600 dark:text-gray-400 px-4 font-sans">
               Lightning-fast developer tools that run entirely in your browser.
             </p>
             

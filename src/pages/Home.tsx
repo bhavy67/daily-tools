@@ -51,18 +51,18 @@ export const Home = () => {
         <div className="relative z-10 text-center">
           <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-white/10 backdrop-blur-sm rounded-full text-white/90 text-xs sm:text-sm font-medium mb-4 sm:mb-6 border border-white/20">
             <Code2 className="w-3 h-3 sm:w-4 sm:h-4" />
-            <span className="hidden xs:inline">Premium Developer Tools — Completely Free</span>
-            <span className="xs:hidden">Dev Tools — Free</span>
+            <span className="hidden xs:inline font-heading tracking-wide">Premium Developer Tools — Completely Free</span>
+            <span className="xs:hidden font-heading tracking-wide">Dev Tools — Free</span>
           </div>
           
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold text-white mb-4 sm:mb-6 tracking-tight leading-tight">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-display font-extrabold text-white mb-4 sm:mb-6 tracking-tight leading-[1.1]">
             Lightning-Fast<br />
             <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">
               KwikTools ⚡
             </span>
           </h1>
           
-          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-300 max-w-2xl mx-auto mb-6 sm:mb-8 lg:mb-10 leading-relaxed px-4">
+          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-300 max-w-2xl mx-auto mb-6 sm:mb-8 lg:mb-10 leading-relaxed px-4 font-sans">
             A curated collection of essential developer utilities. Fast, secure, and runs entirely in your browser.
           </p>
 
@@ -81,8 +81,8 @@ export const Home = () => {
               <Wrench className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
             </div>
             <div>
-              <div className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white">{tools.length}</div>
-              <div className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">Tools Available</div>
+              <div className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white font-display">{tools.length}</div>
+              <div className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 font-heading">Tools Available</div>
             </div>
           </div>
         </div>
@@ -93,8 +93,8 @@ export const Home = () => {
               <Filter className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
             </div>
             <div>
-              <div className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white">{categories.length - 1}</div>
-              <div className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">Categories</div>
+              <div className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white font-display">{categories.length - 1}</div>
+              <div className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 font-heading">Categories</div>
             </div>
           </div>
         </div>
@@ -107,8 +107,8 @@ export const Home = () => {
               </svg>
             </div>
             <div>
-              <div className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white">100%</div>
-              <div className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">Client-Side</div>
+              <div className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white font-display">100%</div>
+              <div className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 font-heading">Client-Side</div>
             </div>
           </div>
         </div>
@@ -117,7 +117,7 @@ export const Home = () => {
       {/* Category Filter */}
       <div className="mb-8 sm:mb-10">
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4 sm:mb-6 gap-3">
-          <h2 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white flex items-center gap-2">
+          <h2 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white flex items-center gap-2 font-heading">
             <Filter className="w-5 h-5 sm:w-6 sm:h-6" />
             Filter by Category
           </h2>
@@ -158,7 +158,7 @@ export const Home = () => {
       {filteredTools.length > 0 ? (
         <>
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4 sm:mb-6 gap-2">
-            <h2 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white">
+            <h2 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white font-heading">
               {selectedCategory === 'all' ? 'All Tools' : categories.find(c => c.id === selectedCategory)?.name}
             </h2>
             <span className="text-xs sm:text-sm font-medium text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-gray-800 px-3 py-1 rounded-full w-fit">
@@ -177,7 +177,7 @@ export const Home = () => {
             <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-700 dark:to-gray-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
               <span className="text-3xl sm:text-4xl">🔍</span>
             </div>
-            <h3 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-2">
+            <h3 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-2 font-heading">
               No tools found
             </h3>
             <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 mb-4">
