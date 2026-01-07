@@ -32,6 +32,13 @@ import { NumberBaseConverter } from './pages/NumberBaseConverter';
 import { QrGenerator } from './pages/QrGenerator';
 import { CsvToJson } from './pages/CsvToJson';
 import { JsonToCsv } from './pages/JsonToCsv';
+import { GradientGenerator } from './pages/GradientGenerator';
+import { BoxShadowGenerator } from './pages/BoxShadowGenerator';
+import { BorderRadiusGenerator } from './pages/BorderRadiusGenerator';
+import { ColorPaletteGenerator } from './pages/ColorPaletteGenerator';
+import { CssMinifier } from './pages/CssMinifier';
+import { HtmlMinifier } from './pages/HtmlMinifier';
+import { JsMinifier } from './pages/JsMinifier';
 
 // Component to scroll to top on route change
 function ScrollToTop() {
@@ -81,6 +88,13 @@ function App() {
           <Route path="/tool/qr-generator" element={<QrGenerator />} />
           <Route path="/tool/csv-to-json" element={<CsvToJson />} />
           <Route path="/tool/json-to-csv" element={<JsonToCsv />} />
+          <Route path="/tool/gradient-generator" element={<GradientGenerator />} />
+          <Route path="/tool/box-shadow-generator" element={<BoxShadowGenerator />} />
+          <Route path="/tool/border-radius-generator" element={<BorderRadiusGenerator />} />
+          <Route path="/tool/color-palette-generator" element={<ColorPaletteGenerator />} />
+          <Route path="/tool/css-minifier" element={<CssMinifier />} />
+          <Route path="/tool/html-minifier" element={<HtmlMinifier />} />
+          <Route path="/tool/js-minifier" element={<JsMinifier />} />
         </Routes>
       </Layout>
     </Router>
