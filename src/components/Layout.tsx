@@ -37,15 +37,15 @@ export const Layout = ({ children }: LayoutProps) => {
                 </button>
               )}
               <Link to="/" className="flex items-center space-x-2 sm:space-x-3 group">
-                <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600 rounded-lg sm:rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all">
-                  <span className="text-white font-bold text-sm sm:text-lg">DT</span>
+                <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 rounded-lg sm:rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all">
+                  <span className="text-white font-bold text-sm sm:text-lg">⚡</span>
                 </div>
                 <div className="hidden xs:block">
-                  <h1 className="text-base sm:text-xl font-bold text-gray-900 dark:text-white">
-                    DevToolkit
+                  <h1 className="text-base sm:text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 bg-clip-text text-transparent">
+                    QuickTools
                   </h1>
                   <p className="text-[10px] sm:text-xs text-gray-500 dark:text-gray-400 hidden sm:block">
-                    Your daily dev companion
+                    Lightning-fast utilities ⚡
                   </p>
                 </div>
               </Link>
@@ -102,16 +102,16 @@ export const Layout = ({ children }: LayoutProps) => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
           <div className="flex flex-col items-center justify-center space-y-3 sm:space-y-4">
             <div className="flex items-center space-x-2">
-              <div className="w-7 h-7 sm:w-8 sm:h-8 bg-gradient-to-br from-indigo-600 to-purple-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-xs sm:text-sm">DT</span>
+              <div className="w-7 h-7 sm:w-8 sm:h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
+                <span className="text-white font-bold text-xs sm:text-sm">⚡</span>
               </div>
-              <span className="text-gray-700 dark:text-gray-300 font-semibold text-sm sm:text-base">DevToolkit</span>
+              <span className="text-gray-700 dark:text-gray-300 font-semibold text-sm sm:text-base">QuickTools</span>
             </div>
             <p className="text-center text-xs sm:text-sm text-gray-600 dark:text-gray-400 max-w-md px-4">
-              Privacy-focused developer tools that run entirely in your browser.
+              Lightning-fast developer tools that run entirely in your browser.
             </p>
             <p className="text-center text-[10px] sm:text-xs text-gray-500 dark:text-gray-500">
-              © 2026 DevToolkit. Made with ❤️ for developers.
+              © 2026 QuickTools. Made with ⚡ for developers.
             </p>
           </div>
         </div>

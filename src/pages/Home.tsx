@@ -56,9 +56,9 @@ export const Home = () => {
           </div>
           
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold text-white mb-4 sm:mb-6 tracking-tight leading-tight">
-            Your Daily<br />
+            Lightning-Fast<br />
             <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">
-              Dev Toolkit
+              QuickTools ⚡
             </span>
           </h1>
           
