@@ -92,7 +92,7 @@ export const Layout = ({ children }: LayoutProps) => {
 
       {/* Main Content */}
       <main className={`pt-14 sm:pt-16 ${!isHome ? 'lg:ml-64' : ''} transition-all duration-300`}>
-        <div className={`${isHome ? '' : 'max-w-7xl mx-auto'} px-0 sm:px-4 md:px-6 lg:px-8 py-4 sm:py-6 lg:py-8`}>
+        <div className={`${isHome ? '' : 'max-w-7xl mx-auto'} px-4 sm:px-6 lg:px-8 py-6 lg:py-8`}>
           {children}
         </div>
       </main>

@@ -1,253 +1,85 @@
 # Developer Tools 🛠️
 
-A comprehensive, production-ready collection of 30+ essential developer utilities built with React, TypeScript, and Tailwind CSS. All tools run locally in your browser for maximum privacy and speed.
+A comprehensive collection of 30+ essential developer utilities built with React, TypeScript, and Tailwind CSS. All tools run locally in your browser for maximum privacy and speed.
 
 ![React](https://img.shields.io/badge/React-18-blue)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5-blue)
 ![Vite](https://img.shields.io/badge/Vite-5-purple)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind-3-cyan)
 
-## 🚀 Features
+## ✨ Key Features
 
-- **30+ Developer Tools** - JSON tools, encoders, hash generators, color converters, text tools, and more
-- **Dark/Light Theme** - Beautiful UI with theme persistence
-- **100% Client-Side** - All processing happens in your browser, no data sent to servers
-- **Fast Search** - Quickly find the tool you need
-- **Responsive Design** - Works perfectly on desktop, tablet, and mobile
-- **Production Ready** - Built with best practices and modern technologies
+- **30+ Developer Tools** - JSON tools, encoders, generators, text utilities, and more
+- **Dark/Light Theme** - Modern UI with theme persistence
+- **100% Client-Side** - All processing in your browser, zero server requests
+- **Fast & Responsive** - Optimized for desktop and mobile
+- **Privacy First** - No tracking, no data collection
 
-## 📦 Available Tools
+## �️ Tools Available
 
-### Formatters & Validators (4 tools)
-- **JSON Formatter** - Format, validate, and beautify JSON
-- **JSON Minifier** - Minify JSON and reduce file size
-- **JSON Validator** - Validate JSON structure and syntax
-- **Markdown Preview** - Live markdown editor with GitHub Flavored Markdown support
+### Formatters & Validators
+JSON Formatter, JSON Minifier, JSON Validator, Markdown Preview
 
-### Encoders & Decoders (4 tools)
-- **URL Encoder/Decoder** - Encode and decode URL/URI components
-- **Base64 Converter** - Encode and decode Base64 strings
-- **HTML Encoder/Decoder** - Encode and decode HTML entities
-- **Base64 Image Converter** - Convert images to Base64 and vice versa
+### Encoders & Decoders
+URL Encoder/Decoder, Base64 Converter, HTML Encoder/Decoder, Base64 Image Converter
 
-### Security & Cryptography (4 tools)
-- **Hash Generator** - Generate MD5, SHA-1, SHA-256, SHA-512, SHA-3 hashes
-- **JWT Decoder** - Decode and inspect JSON Web Tokens
-- **Password Generator** - Generate secure random passwords with customization
-- **API Key Generator** - Generate secure API keys in multiple formats
+### Security & Cryptography
+Hash Generator (MD5, SHA-1, SHA-256, SHA-512, SHA-3), JWT Decoder, Password Generator, API Key Generator
 
-### Time & Date (1 tool)
-- **Timestamp Converter** - Convert between Unix timestamps and dates
+### Generators
+UUID Generator, Lorem Ipsum, URL Slug Generator, QR Code Generator
 
-### Generators (3 tools)
-- **UUID Generator** - Generate UUIDs (v1, v4) in bulk
-- **Lorem Ipsum Generator** - Generate placeholder text
-- **URL Slug Generator** - Create SEO-friendly URL slugs
+### Text Tools
+Case Converter, Word Counter, Line Sorter, Duplicate Lines Handler, Emoji ⇄ Unicode, Find & Replace, Text Diff Checker
 
-### Text Tools (7 tools)
-- **Case Converter** - Convert text between different case formats (camelCase, snake_case, etc.)
-- **Word Counter** - Count words, characters, lines, sentences with reading time
-- **Line Sorter** - Sort, reverse, shuffle, or deduplicate lines
-- **Duplicate Lines Handler** - Find and remove duplicate lines
-- **Emoji ⇄ Unicode** - Convert between emoji and Unicode representations
-- **Find & Replace** - Find and replace text with regex support
+### Utilities
+Color Converter (HEX/RGB/HSL), Regex Tester, Number Base Converter, Timestamp Converter
 
-### QA & Compare (2 tools)
-- **Text Diff Checker** - Compare two texts and see line-by-line differences
-- **JSON Diff Checker** - Compare two JSON objects and see structural differences
+## 🚀 Quick Start
 
-### Utilities (3 tools)
-- **Color Converter** - Convert between HEX, RGB, HSL formats with color picker
-- **Regex Tester** - Test and debug regular expressions with live highlighting
-- **Number Base Converter** - Convert between binary, decimal, hex, and octal
+```bash
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+
+# Build for production
+npm run build
+```
 
 ## 🏗️ Tech Stack
 
-- **Framework**: React 18 with TypeScript
-- **Build Tool**: Vite 5
-- **Styling**: Tailwind CSS 3 with custom theme
-- **Routing**: React Router DOM
-- **State Management**: Zustand with persistence
-- **Icons**: Lucide React
-- **Markdown**: react-markdown with remark-gfm
-- **Cryptography**: crypto-js
+- **React 18** + TypeScript
+- **Vite 5** - Lightning fast build tool
+- **Tailwind CSS 3** - Utility-first styling
+- **Zustand** - State management
+- **React Router** - Client-side routing
 
-## 🛠️ Installation & Setup
+## 📝 Scripts
 
-### Prerequisites
-
-- Node.js 18+ and npm
-
-### Steps
-
-1. **Clone or navigate to the project directory**
-   ```bash
-   cd daily-tools
-   ```
-
-2. **Install dependencies**
-   ```bash
-   npm install
-   ```
-
-3. **Start the development server**
-   ```bash
-   npm run dev
-   ```
-
-4. **Open your browser**
-   Navigate to `http://localhost:5173`
-
-## 📝 Available Scripts
-
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
+- `npm run dev` - Development server
+- `npm run build` - Production build
 - `npm run preview` - Preview production build
-- `npm run lint` - Run ESLint
+- `npm run lint` - Lint code
 
-## 🏗️ Project Structure
+## 🎨 Adding a New Tool
 
-```
-daily-tools/
-├── src/
-│   ├── components/          # Reusable components
-│   │   ├── Layout.tsx       # Main layout with header/footer
-│   │   ├── ToolCard.tsx     # Tool card component
-│   │   └── SearchBar.tsx    # Search functionality
-│   ├── pages/               # Tool pages
-│   │   ├── Home.tsx         # Landing page with tool grid
-│   │   ├── JsonFormatter.tsx
-│   │   ├── UrlEncoderDecoder.tsx
-│   │   ├── Base64Converter.tsx
-│   │   ├── HashGenerator.tsx
-│   │   ├── ColorConverter.tsx
-│   │   └── MarkdownPreview.tsx
-│   ├── config/
-│   │   └── tools.ts         # Tool configurations
-│   ├── store/
-│   │   └── useAppStore.ts   # Zustand store (theme, search)
-│   ├── types/
-│   │   └── index.ts         # TypeScript types
-│   ├── App.tsx              # Main app with routing
-│   ├── main.tsx             # App entry point
-│   └── index.css            # Global styles & Tailwind
-├── public/                  # Static assets
-├── index.html
-├── package.json
-├── tsconfig.json
-├── vite.config.ts
-└── tailwind.config.js
-```
+1. Create component in `src/pages/YourTool.tsx`
+2. Add to `src/config/tools.ts`
+3. Add route in `src/App.tsx`
 
-## 🎨 Customization
+## 🔒 Privacy
 
-### Adding a New Tool
-
-1. Create a new component in `src/pages/YourTool.tsx`
-2. Add the tool configuration to `src/config/tools.ts`
-3. Add the route in `src/App.tsx`
-
-Example:
-```typescript
-// In tools.ts
-{
-  id: 'your-tool',
-  name: 'Your Tool',
-  description: 'Tool description',
-  icon: IconComponent,
-  path: '/tool/your-tool',
-  category: 'Utilities',
-  keywords: ['keyword1', 'keyword2'],
-}
-
-// In App.tsx
-<Route path="/tool/your-tool" element={<YourTool />} />
-```
-
-### Changing Theme Colors
-
-Edit `tailwind.config.js` to customize the primary color palette.
-
-## 🔒 Privacy & Security
-
-- **All processing is client-side** - No data is sent to external servers
-- **No tracking or analytics** - Your privacy is respected
-- **Open source** - Inspect the code yourself
+All processing happens in your browser. No data is sent to servers. No tracking. No analytics.
 
 ## 📄 License
 
-MIT License - Feel free to use this project for personal or commercial purposes.
-
-## 🤝 Contributing
-
-Contributions are welcome! Feel free to:
-- Report bugs
-- Suggest new tools
-- Submit pull requests
-- Improve documentation
-
-## 🙏 Acknowledgments
-
-- Inspired by EasyDevTools and similar developer toolkits
-- Built with modern web technologies
-- Icons by Lucide
-- UI components styled with Tailwind CSS
+MIT License
 
 ---
 
-**Built with ❤️ for developers by developers**
-
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
+**Built with ❤️ for developers**
   {
     files: ['**/*.{ts,tsx}'],
     extends: [

@@ -61,7 +61,7 @@ export const JsonFormatter = () => {
   };
 
   return (
-    <div>
+    <div className="max-w-7xl mx-auto">
       <div className="mb-6">
         <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
           JSON Formatter & Validator
@@ -73,21 +73,21 @@ export const JsonFormatter = () => {
 
       {/* Controls */}
       <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-4 mb-6 border border-gray-200 dark:border-gray-700">
-        <div className="flex flex-wrap gap-4 items-center">
-          <label className="flex items-center space-x-2">
-            <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
+        <div className="flex flex-wrap gap-3 items-center">
+          <div className="flex items-center gap-2">
+            <label className="text-sm font-medium text-gray-700 dark:text-gray-300 whitespace-nowrap">
               Indent Size:
-            </span>
+            </label>
             <select
               value={indentSize}
               onChange={(e) => setIndentSize(Number(e.target.value))}
-              className="input-field py-1 px-2"
+              className="input-field py-1.5 px-3 min-w-[120px]"
             >
               <option value={2}>2 spaces</option>
               <option value={4}>4 spaces</option>
               <option value={8}>8 spaces</option>
             </select>
-          </label>
+          </div>
 
           <button onClick={formatJson} className="btn-primary">
             Format JSON

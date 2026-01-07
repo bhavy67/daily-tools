@@ -1,4 +1,5 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
 import { Layout } from './components/Layout';
 import { Home } from './pages/Home';
 import { JsonFormatter } from './pages/JsonFormatter';
@@ -30,9 +31,21 @@ import RegexTester from './pages/RegexTester';
 import { NumberBaseConverter } from './pages/NumberBaseConverter';
 import { QrGenerator } from './pages/QrGenerator';
 
+// Component to scroll to top on route change
+function ScrollToTop() {
+  const location = useLocation();
+  
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
+  
+  return null;
+}
+
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <Layout>
         <Routes>
           <Route path="/" element={<Home />} />
