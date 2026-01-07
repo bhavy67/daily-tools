@@ -169,6 +169,42 @@ export const Home = () => {
             {filteredTools.map((tool) => (
               <ToolCard key={tool.id} tool={tool} />
             ))}
+            
+            {/* Coming Soon Card */}
+            <div className="block h-full group">
+              <div className="h-full p-4 sm:p-5 lg:p-6 bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 dark:from-indigo-900/20 dark:via-purple-900/20 dark:to-pink-900/20 rounded-xl sm:rounded-2xl shadow-sm border-2 border-dashed border-indigo-300 dark:border-indigo-700 hover:border-indigo-500 dark:hover:border-indigo-500 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 sm:hover:-translate-y-2 hover:scale-[1.01] sm:hover:scale-[1.02]">
+                <div className="flex flex-col h-full">
+                  <div className="flex flex-col items-center justify-center flex-1 text-center">
+                    <div className="mb-3 sm:mb-4">
+                      <div className="relative inline-block">
+                        <div className="p-2 sm:p-2.5 lg:p-3 bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 rounded-lg sm:rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                          <span className="text-2xl sm:text-3xl">✨</span>
+                        </div>
+                        <div className="absolute -top-1 -right-1 w-5 h-5 sm:w-6 sm:h-6 bg-yellow-400 rounded-full flex items-center justify-center animate-bounce shadow-md">
+                          <span className="text-xs">🚀</span>
+                        </div>
+                      </div>
+                    </div>
+                    <h3 className="text-base sm:text-lg font-heading font-bold bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 dark:from-indigo-400 dark:via-purple-400 dark:to-pink-400 bg-clip-text text-transparent mb-1.5 sm:mb-2 line-clamp-2">
+                      More Tools Coming Soon!
+                    </h3>
+                    <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 line-clamp-2 leading-relaxed min-h-[2.5rem] font-sans px-2">
+                      New utilities coming to boost your productivity
+                    </p>
+                  </div>
+                  <div className="mt-4 sm:mt-5 pt-3 sm:pt-4 border-t border-indigo-200 dark:border-indigo-700/50">
+                    <div className="flex items-center justify-center gap-2 text-xs sm:text-sm font-semibold text-indigo-700 dark:text-indigo-300 font-heading">
+                      <div className="flex gap-1">
+                        <div className="w-1.5 h-1.5 bg-indigo-500 rounded-full animate-pulse"></div>
+                        <div className="w-1.5 h-1.5 bg-purple-500 rounded-full animate-pulse" style={{ animationDelay: '0.2s' }}></div>
+                        <div className="w-1.5 h-1.5 bg-pink-500 rounded-full animate-pulse" style={{ animationDelay: '0.4s' }}></div>
+                      </div>
+                      <span>Stay tuned</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </>
       ) : (
