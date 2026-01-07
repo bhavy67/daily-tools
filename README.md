@@ -1,6 +1,6 @@
 # Developer Tools 🛠️
 
-A comprehensive, production-ready collection of essential developer utilities built with React, TypeScript, and Tailwind CSS. All tools run locally in your browser for maximum privacy and speed.
+A comprehensive, production-ready collection of 30+ essential developer utilities built with React, TypeScript, and Tailwind CSS. All tools run locally in your browser for maximum privacy and speed.
 
 ![React](https://img.shields.io/badge/React-18-blue)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5-blue)
@@ -9,7 +9,7 @@ A comprehensive, production-ready collection of essential developer utilities bu
 
 ## 🚀 Features
 
-- **12+ Developer Tools** - JSON formatter, Base64 converter, hash generator, color converter, and more
+- **30+ Developer Tools** - JSON tools, encoders, hash generators, color converters, text tools, and more
 - **Dark/Light Theme** - Beautiful UI with theme persistence
 - **100% Client-Side** - All processing happens in your browser, no data sent to servers
 - **Fast Search** - Quickly find the tool you need
@@ -18,27 +18,48 @@ A comprehensive, production-ready collection of essential developer utilities bu
 
 ## 📦 Available Tools
 
-### Formatters & Validators
-- **JSON Formatter** - Format, validate, beautify, and minify JSON
+### Formatters & Validators (4 tools)
+- **JSON Formatter** - Format, validate, and beautify JSON
+- **JSON Minifier** - Minify JSON and reduce file size
+- **JSON Validator** - Validate JSON structure and syntax
 - **Markdown Preview** - Live markdown editor with GitHub Flavored Markdown support
 
-### Encoders & Decoders
+### Encoders & Decoders (4 tools)
 - **URL Encoder/Decoder** - Encode and decode URL/URI components
 - **Base64 Converter** - Encode and decode Base64 strings
+- **HTML Encoder/Decoder** - Encode and decode HTML entities
+- **Base64 Image Converter** - Convert images to Base64 and vice versa
 
-### Cryptography
+### Security & Cryptography (4 tools)
 - **Hash Generator** - Generate MD5, SHA-1, SHA-256, SHA-512, SHA-3 hashes
 - **JWT Decoder** - Decode and inspect JSON Web Tokens
+- **Password Generator** - Generate secure random passwords with customization
+- **API Key Generator** - Generate secure API keys in multiple formats
 
-### Utilities
-- **Color Converter** - Convert between HEX, RGB, and HSL formats
-- **Timestamp Converter** - Convert between timestamps and dates
-- **Regex Tester** - Test and debug regular expressions
+### Time & Date (1 tool)
+- **Timestamp Converter** - Convert between Unix timestamps and dates
+
+### Generators (3 tools)
+- **UUID Generator** - Generate UUIDs (v1, v4) in bulk
+- **Lorem Ipsum Generator** - Generate placeholder text
+- **URL Slug Generator** - Create SEO-friendly URL slugs
+
+### Text Tools (7 tools)
+- **Case Converter** - Convert text between different case formats (camelCase, snake_case, etc.)
+- **Word Counter** - Count words, characters, lines, sentences with reading time
+- **Line Sorter** - Sort, reverse, shuffle, or deduplicate lines
+- **Duplicate Lines Handler** - Find and remove duplicate lines
+- **Emoji ⇄ Unicode** - Convert between emoji and Unicode representations
+- **Find & Replace** - Find and replace text with regex support
+
+### QA & Compare (2 tools)
+- **Text Diff Checker** - Compare two texts and see line-by-line differences
+- **JSON Diff Checker** - Compare two JSON objects and see structural differences
+
+### Utilities (3 tools)
+- **Color Converter** - Convert between HEX, RGB, HSL formats with color picker
+- **Regex Tester** - Test and debug regular expressions with live highlighting
 - **Number Base Converter** - Convert between binary, decimal, hex, and octal
-
-### Generators
-- **UUID Generator** - Generate UUIDs (v1, v4)
-- **QR Code Generator** - Generate QR codes from text
 
 ## 🏗️ Tech Stack
 
