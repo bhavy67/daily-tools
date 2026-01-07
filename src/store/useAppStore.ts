@@ -11,7 +11,7 @@ interface AppState {
 export const useAppStore = create<AppState>()(
   persist(
     (set) => ({
-      theme: 'light',
+      theme: 'dark', // Default to dark mode
       toggleTheme: () =>
         set((state) => {
           const newTheme = state.theme === 'light' ? 'dark' : 'light';
@@ -31,9 +31,10 @@ export const useAppStore = create<AppState>()(
     {
       name: 'app-storage',
       onRehydrateStorage: () => (state) => {
-        // Apply theme on page load
-        if (state && typeof document !== 'undefined') {
-          if (state.theme === 'dark') {
+        // Apply theme on page load, default to dark if no saved preference
+        if (typeof document !== 'undefined') {
+          const theme = state?.theme || 'dark';
+          if (theme === 'dark') {
             document.documentElement.classList.add('dark');
           } else {
             document.documentElement.classList.remove('dark');
