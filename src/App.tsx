@@ -27,6 +27,8 @@ import { DuplicateLines } from './pages/DuplicateLines';
 import EmojiUnicode from './pages/EmojiUnicode';
 import FindReplace from './pages/FindReplace';
 import RegexTester from './pages/RegexTester';
+import { NumberBaseConverter } from './pages/NumberBaseConverter';
+import { QrGenerator } from './pages/QrGenerator';
 
 function App() {
   return (
@@ -60,6 +62,8 @@ function App() {
           <Route path="/tool/emoji-unicode" element={<EmojiUnicode />} />
           <Route path="/tool/find-replace" element={<FindReplace />} />
           <Route path="/tool/regex-tester" element={<RegexTester />} />
+          <Route path="/tool/number-base-converter" element={<NumberBaseConverter />} />
+          <Route path="/tool/qr-generator" element={<QrGenerator />} />
         </Routes>
       </Layout>
     </Router>
