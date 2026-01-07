@@ -73,10 +73,10 @@ export const NotFound = () => {
           <div className="flex items-start gap-3">
             <AlertCircle className="w-6 h-6 text-blue-500 flex-shrink-0 mt-0.5" />
             <div className="text-left">
-              <p className="text-sm text-blue-800 dark:text-blue-200 mb-2">
-                <strong>Did you know?</strong> Even the best developers get lost sometimes! 
+              <p className="text-sm sm:text-base text-blue-800 dark:text-blue-200 mb-2">
+                <strong>Did you know?</strong> Even the best developers get lost sometimes!
               </p>
-              <p className="text-sm text-blue-700 dark:text-blue-300">
+              <p className="text-sm sm:text-base text-blue-700 dark:text-blue-300">
                 Maybe you were looking for one of our awesome tools? Check them out from the home page! 🚀
               </p>
             </div>

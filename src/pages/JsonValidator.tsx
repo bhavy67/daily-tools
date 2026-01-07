@@ -115,13 +115,12 @@ const JsonValidator: React.FC = () => {
 
         {/* Input Section */}
         <div className="mb-4">
-          <div className="flex items-center justify-between mb-2">
+          <div className="flex items-center justify-between mb-2 min-h-[40px]">
             <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">
               Input JSON
             </label>
-            <label className="cursor-pointer px-3 py-1 bg-blue-500 text-white rounded hover:bg-blue-600 transition-colors text-sm">
-              <FileUp className="inline-block w-4 h-4 mr-1" />
-              Upload
+            <label className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors cursor-pointer" title="Upload file">
+              <FileUp className="w-4 h-4 text-gray-600 dark:text-gray-400" />
               <input
                 type="file"
                 accept=".json"

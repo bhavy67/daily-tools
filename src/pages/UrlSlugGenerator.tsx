@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { Link2, Copy, RefreshCw } from 'lucide-react';
+import { Link2, Copy, RefreshCw, Check } from 'lucide-react';
 
 const UrlSlugGenerator: React.FC = () => {
   const [input, setInput] = useState('');
   const [slug, setSlug] = useState('');
+  const [copied, setCopied] = useState(false);
   const [options, setOptions] = useState({
     lowercase: true,
     separator: '-',
@@ -64,6 +65,8 @@ const UrlSlugGenerator: React.FC = () => {
 
   const handleCopy = () => {
     navigator.clipboard.writeText(slug);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
   };
 
   const handleClear = () => {
@@ -180,10 +183,14 @@ const UrlSlugGenerator: React.FC = () => {
               <button
                 onClick={handleCopy}
                 disabled={!slug}
-                className="px-3 py-1 bg-green-500 text-white rounded hover:bg-green-600 disabled:bg-gray-400 disabled:cursor-not-allowed transition-colors text-sm"
+                className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                title="Copy to clipboard"
               >
-                <Copy className="inline-block w-4 h-4 mr-1" />
-                Copy
+                {copied ? (
+                  <Check className="w-4 h-4 text-green-500" />
+                ) : (
+                  <Copy className="w-4 h-4 text-gray-600 dark:text-gray-400" />
+                )}
               </button>
             </div>
           </div>

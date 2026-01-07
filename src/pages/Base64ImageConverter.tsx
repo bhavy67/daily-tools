@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Image as ImageIcon, FileUp, Copy, Download, X } from 'lucide-react';
+import { Image as ImageIcon, FileUp, Copy, Download, X, Check } from 'lucide-react';
 
 const Base64ImageConverter: React.FC = () => {
   const [mode, setMode] = useState<'encode' | 'decode'>('encode');
@@ -12,6 +12,7 @@ const Base64ImageConverter: React.FC = () => {
     height: number;
   } | null>(null);
   const [error, setError] = useState('');
+  const [copied, setCopied] = useState(false);
 
   const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -97,6 +98,8 @@ const Base64ImageConverter: React.FC = () => {
 
   const handleCopy = () => {
     navigator.clipboard.writeText(base64String);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
   };
 
   const handleDownload = () => {
@@ -214,10 +217,14 @@ const Base64ImageConverter: React.FC = () => {
                   </label>
                   <button
                     onClick={handleCopy}
-                    className="px-3 py-1 bg-green-500 text-white rounded hover:bg-green-600 transition-colors text-sm"
+                    className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+                    title="Copy to clipboard"
                   >
-                    <Copy className="inline-block w-4 h-4 mr-1" />
-                    Copy
+                    {copied ? (
+                      <Check className="w-4 h-4 text-green-500" />
+                    ) : (
+                      <Copy className="w-4 h-4 text-gray-600 dark:text-gray-400" />
+                    )}
                   </button>
                 </div>
                 <textarea
@@ -240,18 +247,18 @@ const Base64ImageConverter: React.FC = () => {
                   {mode === 'decode' && (
                     <button
                       onClick={handleDownload}
-                      className="px-3 py-1 bg-purple-500 text-white rounded hover:bg-purple-600 transition-colors text-sm"
+                      className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+                      title="Download image"
                     >
-                      <Download className="inline-block w-4 h-4 mr-1" />
-                      Download
+                      <Download className="w-4 h-4 text-gray-600 dark:text-gray-400" />
                     </button>
                   )}
                   <button
                     onClick={handleClear}
-                    className="px-3 py-1 bg-red-500 text-white rounded hover:bg-red-600 transition-colors text-sm"
+                    className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+                    title="Clear"
                   >
-                    <X className="inline-block w-4 h-4 mr-1" />
-                    Clear
+                    <X className="w-4 h-4 text-gray-600 dark:text-gray-400" />
                   </button>
                 </div>
               )}

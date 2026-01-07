@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Key, Copy, RefreshCw } from 'lucide-react';
+import { Key, Copy, RefreshCw, Check } from 'lucide-react';
 
 const ApiKeyGenerator: React.FC = () => {
   const [apiKeys, setApiKeys] = useState<string[]>([]);
@@ -9,6 +9,7 @@ const ApiKeyGenerator: React.FC = () => {
     format: 'base64'
   });
   const [count, setCount] = useState(1);
+  const [copied, setCopied] = useState<number | 'all' | null>(null);
 
   const generateKey = (format: string, length: number, prefix: string): string => {
     let key = '';
@@ -46,12 +47,16 @@ const ApiKeyGenerator: React.FC = () => {
     setApiKeys(keys);
   };
 
-  const handleCopy = (key: string) => {
+  const handleCopy = (key: string, index: number) => {
     navigator.clipboard.writeText(key);
+    setCopied(index);
+    setTimeout(() => setCopied(null), 2000);
   };
 
   const handleCopyAll = () => {
     navigator.clipboard.writeText(apiKeys.join('\n'));
+    setCopied('all');
+    setTimeout(() => setCopied(null), 2000);
   };
 
   return (
@@ -141,17 +146,21 @@ const ApiKeyGenerator: React.FC = () => {
               <div className="flex gap-2">
                 <button
                   onClick={handleCopyAll}
-                  className="px-3 py-1 bg-green-500 text-white rounded hover:bg-green-600 transition-colors text-sm"
+                  className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+                  title="Copy all keys"
                 >
-                  <Copy className="inline-block w-4 h-4 mr-1" />
-                  Copy All
+                  {copied === 'all' ? (
+                    <Check className="w-4 h-4 text-green-500" />
+                  ) : (
+                    <Copy className="w-4 h-4 text-gray-600 dark:text-gray-400" />
+                  )}
                 </button>
                 <button
                   onClick={handleGenerate}
-                  className="px-3 py-1 bg-purple-500 text-white rounded hover:bg-purple-600 transition-colors text-sm"
+                  className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+                  title="Regenerate keys"
                 >
-                  <RefreshCw className="inline-block w-4 h-4 mr-1" />
-                  Regenerate
+                  <RefreshCw className="w-4 h-4 text-gray-600 dark:text-gray-400" />
                 </button>
               </div>
             </div>
@@ -165,10 +174,15 @@ const ApiKeyGenerator: React.FC = () => {
                     {key}
                   </code>
                   <button
-                    onClick={() => handleCopy(key)}
-                    className="px-3 py-1 bg-blue-500 text-white rounded hover:bg-blue-600 transition-colors text-sm flex-shrink-0"
+                    onClick={() => handleCopy(key, index)}
+                    className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors flex-shrink-0"
+                    title="Copy key"
                   >
-                    <Copy className="w-4 h-4" />
+                    {copied === index ? (
+                      <Check className="w-4 h-4 text-green-500" />
+                    ) : (
+                      <Copy className="w-4 h-4 text-gray-600 dark:text-gray-300" />
+                    )}
                   </button>
                 </div>
               ))}

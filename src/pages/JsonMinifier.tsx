@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import { FileDown, FileUp, Copy, Minimize2 } from 'lucide-react';
+import { FileDown, FileUp, Copy, Minimize2, Check } from 'lucide-react';
 
 const JsonMinifier: React.FC = () => {
   const [input, setInput] = useState('');
   const [output, setOutput] = useState('');
   const [error, setError] = useState('');
+  const [copied, setCopied] = useState(false);
 
   const minifyJson = () => {
     setError('');
@@ -19,6 +20,8 @@ const JsonMinifier: React.FC = () => {
 
   const handleCopy = () => {
     navigator.clipboard.writeText(output);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
   };
 
   const handleUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -61,22 +64,19 @@ const JsonMinifier: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {/* Input Section */}
           <div>
-            <div className="flex items-center justify-between mb-2">
+            <div className="flex items-center justify-between mb-2 min-h-[40px]">
               <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">
                 Input JSON
               </label>
-              <div className="flex gap-2">
-                <label className="cursor-pointer px-3 py-1 bg-blue-500 text-white rounded hover:bg-blue-600 transition-colors text-sm">
-                  <FileUp className="inline-block w-4 h-4 mr-1" />
-                  Upload
-                  <input
-                    type="file"
-                    accept=".json"
-                    onChange={handleUpload}
-                    className="hidden"
-                  />
-                </label>
-              </div>
+              <label className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors cursor-pointer" title="Upload file">
+                <FileUp className="w-4 h-4 text-gray-600 dark:text-gray-400" />
+                <input
+                  type="file"
+                  accept=".json"
+                  onChange={handleUpload}
+                  className="hidden"
+                />
+              </label>
             </div>
             <textarea
               value={input}
@@ -88,28 +88,32 @@ const JsonMinifier: React.FC = () => {
 
           {/* Output Section */}
           <div>
-            <div className="flex items-center justify-between mb-2">
+            <div className="flex items-center justify-between mb-2 min-h-[40px]">
               <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">
                 Minified JSON
               </label>
-              <div className="flex gap-2">
-                <button
-                  onClick={handleCopy}
-                  disabled={!output}
-                  className="px-3 py-1 bg-green-500 text-white rounded hover:bg-green-600 disabled:bg-gray-400 disabled:cursor-not-allowed transition-colors text-sm"
-                >
-                  <Copy className="inline-block w-4 h-4 mr-1" />
-                  Copy
-                </button>
-                <button
-                  onClick={handleDownload}
-                  disabled={!output}
-                  className="px-3 py-1 bg-purple-500 text-white rounded hover:bg-purple-600 disabled:bg-gray-400 disabled:cursor-not-allowed transition-colors text-sm"
-                >
-                  <FileDown className="inline-block w-4 h-4 mr-1" />
-                  Download
-                </button>
-              </div>
+              {output && (
+                <div className="flex gap-2">
+                  <button
+                    onClick={handleCopy}
+                    className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+                    title="Copy to clipboard"
+                  >
+                    {copied ? (
+                      <Check className="w-4 h-4 text-green-500" />
+                    ) : (
+                      <Copy className="w-4 h-4 text-gray-600 dark:text-gray-400" />
+                    )}
+                  </button>
+                  <button
+                    onClick={handleDownload}
+                    className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+                    title="Download as file"
+                  >
+                    <FileDown className="w-4 h-4 text-gray-600 dark:text-gray-400" />
+                  </button>
+                </div>
+              )}
             </div>
             <textarea
               value={output}

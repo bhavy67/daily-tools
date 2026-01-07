@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import { Replace, Copy } from 'lucide-react';
+import { Replace, Copy, Check } from 'lucide-react';
 
 const FindReplace: React.FC = () => {
   const [input, setInput] = useState('');
   const [findText, setFindText] = useState('');
   const [replaceText, setReplaceText] = useState('');
   const [output, setOutput] = useState('');
+  const [copied, setCopied] = useState(false);
   const [options, setOptions] = useState({
     caseSensitive: false,
     wholeWord: false,
@@ -56,6 +57,8 @@ const FindReplace: React.FC = () => {
 
   const handleCopy = () => {
     navigator.clipboard.writeText(output);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
   };
 
   const handleClear = () => {
@@ -244,10 +247,14 @@ const FindReplace: React.FC = () => {
               </label>
               <button
                 onClick={handleCopy}
-                className="px-3 py-1 bg-green-500 text-white rounded hover:bg-green-600 transition-colors text-sm"
+                className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+                title="Copy to clipboard"
               >
-                <Copy className="inline-block w-4 h-4 mr-1" />
-                Copy
+                {copied ? (
+                  <Check className="w-4 h-4 text-green-500" />
+                ) : (
+                  <Copy className="w-4 h-4 text-gray-600 dark:text-gray-400" />
+                )}
               </button>
             </div>
             <textarea

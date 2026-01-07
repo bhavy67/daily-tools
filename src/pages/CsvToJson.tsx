@@ -139,9 +139,11 @@ Bob Johnson,35,Toronto,Canada`;
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Input */}
         <div>
-          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-            CSV Input
-          </label>
+          <div className="flex items-center justify-between mb-2 min-h-[40px]">
+            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">
+              CSV Input
+            </label>
+          </div>
           <textarea
             value={csvInput}
             onChange={(e) => setCsvInput(e.target.value)}
@@ -152,7 +154,7 @@ Bob Johnson,35,Toronto,Canada`;
 
         {/* Output */}
         <div>
-          <div className="flex items-center justify-between mb-2">
+          <div className="flex items-center justify-between mb-2 min-h-[40px]">
             <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">
               JSON Output
             </label>
