@@ -30,6 +30,8 @@ import FindReplace from './pages/FindReplace';
 import RegexTester from './pages/RegexTester';
 import { NumberBaseConverter } from './pages/NumberBaseConverter';
 import { QrGenerator } from './pages/QrGenerator';
+import { CsvToJson } from './pages/CsvToJson';
+import { JsonToCsv } from './pages/JsonToCsv';
 
 // Component to scroll to top on route change
 function ScrollToTop() {
@@ -77,6 +79,8 @@ function App() {
           <Route path="/tool/regex-tester" element={<RegexTester />} />
           <Route path="/tool/number-base-converter" element={<NumberBaseConverter />} />
           <Route path="/tool/qr-generator" element={<QrGenerator />} />
+          <Route path="/tool/csv-to-json" element={<CsvToJson />} />
+          <Route path="/tool/json-to-csv" element={<JsonToCsv />} />
         </Routes>
       </Layout>
     </Router>

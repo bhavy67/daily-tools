@@ -23,6 +23,8 @@ import {
   Smile,
   Search,
   Replace,
+  Table,
+  FileJson,
 } from 'lucide-react';
 import type { Tool } from '../types';
 
@@ -63,6 +65,24 @@ export const tools: Tool[] = [
     path: '/tool/markdown-preview',
     category: 'Formatters',
     keywords: ['markdown', 'md', 'preview', 'editor', 'live'],
+  },
+  {
+    id: 'csv-to-json',
+    name: 'CSV to JSON',
+    description: 'Convert CSV data to JSON format',
+    icon: Table,
+    path: '/tool/csv-to-json',
+    category: 'Converters',
+    keywords: ['csv', 'json', 'convert', 'transform', 'data'],
+  },
+  {
+    id: 'json-to-csv',
+    name: 'JSON to CSV',
+    description: 'Convert JSON array to CSV format',
+    icon: FileJson,
+    path: '/tool/json-to-csv',
+    category: 'Converters',
+    keywords: ['json', 'csv', 'convert', 'export', 'excel'],
   },
   
   // Encoders & Decoders
