@@ -13,6 +13,7 @@ const JsonDiff: React.FC = () => {
   const [json2, setJson2] = useState('');
   const [diffs, setDiffs] = useState<DiffResult[]>([]);
   const [error, setError] = useState('');
+  const [hasCompared, setHasCompared] = useState(false);
 
   const compareObjects = (obj1: any, obj2: any, path: string = ''): DiffResult[] => {
     const results: DiffResult[] = [];
@@ -110,6 +111,7 @@ const JsonDiff: React.FC = () => {
   const handleCompare = () => {
     setError('');
     setDiffs([]);
+    setHasCompared(true);
 
     try {
       const parsed1 = JSON.parse(json1);
@@ -148,6 +150,7 @@ const JsonDiff: React.FC = () => {
     setJson2('');
     setDiffs([]);
     setError('');
+    setHasCompared(false);
   };
 
   const formatValue = (value: any): string => {
@@ -256,7 +259,7 @@ const JsonDiff: React.FC = () => {
         )}
 
         {/* Stats */}
-        {diffs.length > 0 && (
+        {hasCompared && diffs.length > 0 && (
           <div className="mb-6 grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
             <div className="bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-700 dark:to-gray-800 p-4 rounded-xl border border-gray-300 dark:border-gray-600">
               <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 font-heading">Total Differences</p>
@@ -278,7 +281,7 @@ const JsonDiff: React.FC = () => {
         )}
 
         {/* Differences */}
-        {diffs.length > 0 && (
+        {hasCompared && diffs.length > 0 && (
           <div>
             <h3 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-4 font-heading">
               Differences Found
@@ -349,7 +352,7 @@ const JsonDiff: React.FC = () => {
           </div>
         )}
 
-        {diffs.length === 0 && json1 && json2 && !error && (
+        {hasCompared && diffs.length === 0 && json1 && json2 && !error && (
           <div className="p-4 sm:p-6 bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20 border-2 border-green-400 dark:border-green-700 rounded-xl text-center">
             <div className="text-4xl sm:text-5xl mb-3">✓</div>
             <p className="text-green-800 dark:text-green-300 font-bold text-base sm:text-lg font-heading">

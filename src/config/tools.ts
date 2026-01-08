@@ -307,15 +307,6 @@ export const tools: Tool[] = [
   
   // CSS Generators
   {
-    id: 'css-generator',
-    name: 'CSS Generator',
-    description: 'Generate CSS code for styles',
-    icon: Droplet,
-    path: '/tool/css-generator',
-    category: 'CSS Generators',
-    keywords: ['css', 'generator', 'styles', 'code', 'create'],
-  },
-  {
     id: 'css-minifier',
     name: 'CSS Minifier',
     description: 'Minify CSS code and reduce file size',
