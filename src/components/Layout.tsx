@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { Moon, Sun, Menu, X, Linkedin } from 'lucide-react';
 import { useAppStore } from '../store/useAppStore';
 import { Sidebar } from './Sidebar';
@@ -11,8 +11,6 @@ interface LayoutProps {
 
 export const Layout = ({ children }: LayoutProps) => {
   const { theme, toggleTheme } = useAppStore();
-  const location = useLocation();
-  const isHome = location.pathname === '/';
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   return (
@@ -23,19 +21,17 @@ export const Layout = ({ children }: LayoutProps) => {
           <div className="flex items-center justify-between h-14 sm:h-16">
             {/* Logo and Title */}
             <div className="flex items-center space-x-2 sm:space-x-4">
-              {!isHome && (
-                <button
-                  onClick={() => setSidebarOpen(!sidebarOpen)}
-                  className="lg:hidden p-2 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
-                  aria-label="Toggle sidebar"
-                >
-                  {sidebarOpen ? (
-                    <X className="w-5 h-5 text-gray-600 dark:text-gray-300" />
-                  ) : (
-                    <Menu className="w-5 h-5 text-gray-600 dark:text-gray-300" />
-                  )}
-                </button>
-              )}
+              <button
+                onClick={() => setSidebarOpen(!sidebarOpen)}
+                className="lg:hidden p-2 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+                aria-label="Toggle sidebar"
+              >
+                {sidebarOpen ? (
+                  <X className="w-5 h-5 text-gray-600 dark:text-gray-300" />
+                ) : (
+                  <Menu className="w-5 h-5 text-gray-600 dark:text-gray-300" />
+                )}
+              </button>
               <Link to="/" className="flex items-center space-x-2 sm:space-x-3 group">
                 <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 rounded-lg sm:rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all">
                   <span className="text-white font-bold text-sm sm:text-lg">⚡</span>
@@ -67,38 +63,36 @@ export const Layout = ({ children }: LayoutProps) => {
         </div>
       </header>
 
-      {/* Sidebar - Only show on tool pages */}
-      {!isHome && (
-        <>
-          {/* Desktop Sidebar */}
-          <div className="hidden lg:block">
-            <Sidebar />
-          </div>
-          
-          {/* Mobile Sidebar */}
-          {sidebarOpen && (
-            <div className="fixed inset-0 z-40 lg:hidden">
-              <div
-                className="fixed inset-0 bg-black/50"
-                onClick={() => setSidebarOpen(false)}
-              />
-              <div className="fixed top-16 left-0 bottom-0 w-64 bg-white dark:bg-gray-800 shadow-xl">
-                <Sidebar />
-              </div>
+      {/* Sidebar - Show on all pages */}
+      <>
+        {/* Desktop Sidebar */}
+        <div className="hidden lg:block">
+          <Sidebar />
+        </div>
+        
+        {/* Mobile Sidebar */}
+        {sidebarOpen && (
+          <div className="fixed inset-0 z-40 lg:hidden">
+            <div
+              className="fixed inset-0 bg-black/50"
+              onClick={() => setSidebarOpen(false)}
+            />
+            <div className="fixed top-14 sm:top-16 left-0 bottom-0 w-64 bg-white dark:bg-gray-800 shadow-xl">
+              <Sidebar />
             </div>
-          )}
-        </>
-      )}
+          </div>
+        )}
+      </>
 
       {/* Main Content */}
-      <main className={`pt-14 sm:pt-16 ${!isHome ? 'lg:ml-64' : ''} transition-all duration-300`}>
-        <div className={`${isHome ? '' : 'max-w-7xl mx-auto'} px-4 sm:px-6 lg:px-8 py-6 lg:py-8`}>
+      <main className="pt-14 sm:pt-16 lg:ml-64 transition-all duration-300">
+        <div className="px-4 sm:px-6 lg:px-8 py-6 lg:py-8">
           {children}
         </div>
       </main>
 
       {/* Footer */}
-      <footer className={`${!isHome ? 'lg:ml-64' : ''} bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 mt-12 sm:mt-16`}>
+      <footer className="lg:ml-64 bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 mt-12 sm:mt-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
           <div className="flex flex-col items-center justify-center space-y-3 sm:space-y-4">
             <div className="flex items-center space-x-2">
