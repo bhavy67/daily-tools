@@ -35,6 +35,7 @@ import {
   Activity,
   WrapText,
   ListOrdered,
+  Car,
 } from 'lucide-react';
 import type { Tool } from '../types';
 
@@ -57,6 +58,15 @@ export const tools: Tool[] = [
     path: '/tool/json-diff',
     category: 'Formatters',
     keywords: ['json', 'diff', 'compare', 'difference', 'changes'],
+  },
+  {
+    id: 'vin-generator',
+    name: 'VIN Generator',
+    description: 'Generate valid Vehicle Identification Numbers for testing',
+    icon: Car,
+    path: '/tool/vin-generator',
+    category: 'Generators',
+    keywords: ['vin', 'vehicle', 'identification', 'number', 'generate', 'car', 'auto'],
   },
   
   // Other Formatters & Validators

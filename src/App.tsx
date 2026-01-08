@@ -53,6 +53,7 @@ import { CalorieCalculator } from './pages/CalorieCalculator';
 import { LoremIpsumGenerator } from './pages/LoremIpsumGenerator';
 import { RemoveLineBreaks } from './pages/RemoveLineBreaks';
 import { AddLineNumbers } from './pages/AddLineNumbers';
+import { VinGenerator } from './pages/VinGenerator';
 import { NotFound } from './pages/NotFound';
 
 // Component to scroll to top on route change
@@ -77,6 +78,7 @@ function App() {
           <Route path="/tool/json-minifier" element={<JsonMinifier />} />
           <Route path="/tool/json-validator" element={<JsonValidator />} />
           <Route path="/tool/json-diff" element={<JsonDiff />} />
+          <Route path="/tool/vin-generator" element={<VinGenerator />} />
           <Route path="/tool/url-encoder-decoder" element={<UrlEncoderDecoder />} />
           <Route path="/tool/base64-converter" element={<Base64Converter />} />
           <Route path="/tool/html-encoder-decoder" element={<HtmlEncoderDecoder />} />
