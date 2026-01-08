@@ -50,7 +50,6 @@ import { TipCalculator } from './pages/TipCalculator';
 import { BmiCalculator } from './pages/BmiCalculator';
 import { LoanCalculator } from './pages/LoanCalculator';
 import { CalorieCalculator } from './pages/CalorieCalculator';
-import { GrammarChecker } from './pages/GrammarChecker';
 import { LoremIpsumGenerator } from './pages/LoremIpsumGenerator';
 import { RemoveLineBreaks } from './pages/RemoveLineBreaks';
 import { AddLineNumbers } from './pages/AddLineNumbers';
@@ -122,7 +121,6 @@ function App() {
           <Route path="/tool/bmi-calculator" element={<BmiCalculator />} />
           <Route path="/tool/loan-calculator" element={<LoanCalculator />} />
           <Route path="/tool/calorie-calculator" element={<CalorieCalculator />} />
-          <Route path="/tool/grammar-checker" element={<GrammarChecker />} />
           <Route path="/tool/lorem-ipsum-generator" element={<LoremIpsumGenerator />} />
           <Route path="/tool/remove-line-breaks" element={<RemoveLineBreaks />} />
           <Route path="/tool/add-line-numbers" element={<AddLineNumbers />} />

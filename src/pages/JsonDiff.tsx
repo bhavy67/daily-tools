@@ -168,23 +168,25 @@ const JsonDiff: React.FC = () => {
 
   return (
     <div className="max-w-7xl mx-auto">
-      <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
-        <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
-          JSON Diff Checker
-        </h1>
-        <p className="text-gray-600 dark:text-gray-400 mb-6">
-          Compare two JSON objects and see the differences
-        </p>
+      <div className="bg-white dark:bg-gray-800 rounded-xl sm:rounded-2xl shadow-lg p-4 sm:p-6 lg:p-8 border border-gray-200 dark:border-gray-700">
+        <div className="mb-6 sm:mb-8">
+          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-display font-bold text-gray-900 dark:text-white mb-2">
+            JSON Diff Checker
+          </h1>
+          <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 font-sans">
+            Compare two JSON objects and highlight the differences - completely client-side
+          </p>
+        </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 mb-6">
           {/* JSON 1 */}
           <div>
-            <div className="flex items-center justify-between mb-2">
-              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">
+            <div className="flex items-center justify-between mb-3">
+              <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 font-heading">
                 JSON 1 (Original)
               </label>
-              <label className="cursor-pointer px-3 py-1 bg-blue-500 text-white rounded hover:bg-blue-600 transition-colors text-sm">
-                <FileUp className="inline-block w-4 h-4 mr-1" />
+              <label className="cursor-pointer px-3 py-1.5 sm:px-4 sm:py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors text-xs sm:text-sm font-medium flex items-center gap-1.5">
+                <FileUp className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                 Upload
                 <input
                   type="file"
@@ -198,18 +200,18 @@ const JsonDiff: React.FC = () => {
               value={json1}
               onChange={(e) => setJson1(e.target.value)}
               placeholder="Paste JSON here..."
-              className="w-full h-96 p-4 border border-gray-300 dark:border-gray-600 rounded-lg bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono text-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="w-full h-80 sm:h-96 p-3 sm:p-4 border-2 border-gray-300 dark:border-gray-600 rounded-xl bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono text-xs sm:text-sm focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all resize-none"
             />
           </div>
 
           {/* JSON 2 */}
           <div>
-            <div className="flex items-center justify-between mb-2">
-              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">
+            <div className="flex items-center justify-between mb-3">
+              <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 font-heading">
                 JSON 2 (Comparison)
               </label>
-              <label className="cursor-pointer px-3 py-1 bg-blue-500 text-white rounded hover:bg-blue-600 transition-colors text-sm">
-                <FileUp className="inline-block w-4 h-4 mr-1" />
+              <label className="cursor-pointer px-3 py-1.5 sm:px-4 sm:py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors text-xs sm:text-sm font-medium flex items-center gap-1.5">
+                <FileUp className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                 Upload
                 <input
                   type="file"
@@ -223,24 +225,24 @@ const JsonDiff: React.FC = () => {
               value={json2}
               onChange={(e) => setJson2(e.target.value)}
               placeholder="Paste JSON here..."
-              className="w-full h-96 p-4 border border-gray-300 dark:border-gray-600 rounded-lg bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono text-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="w-full h-80 sm:h-96 p-3 sm:p-4 border-2 border-gray-300 dark:border-gray-600 rounded-xl bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-mono text-xs sm:text-sm focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all resize-none"
             />
           </div>
         </div>
 
         {/* Action Buttons */}
-        <div className="flex gap-4 mb-6">
+        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-6">
           <button
             onClick={handleCompare}
             disabled={!json1 || !json2}
-            className="flex-1 px-6 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 disabled:bg-gray-400 disabled:cursor-not-allowed transition-colors font-medium"
+            className="flex-1 px-4 sm:px-6 py-2.5 sm:py-3 bg-indigo-600 text-white rounded-xl hover:bg-indigo-700 disabled:bg-gray-400 disabled:cursor-not-allowed transition-all font-semibold text-sm sm:text-base shadow-lg shadow-indigo-600/30 hover:shadow-xl disabled:shadow-none flex items-center justify-center gap-2"
           >
-            <GitCompare className="inline-block w-5 h-5 mr-2" />
+            <GitCompare className="w-4 h-4 sm:w-5 sm:h-5" />
             Compare JSON
           </button>
           <button
             onClick={handleClear}
-            className="px-6 py-3 bg-gray-500 text-white rounded-lg hover:bg-gray-600 transition-colors font-medium"
+            className="px-4 sm:px-6 py-2.5 sm:py-3 bg-gray-500 text-white rounded-xl hover:bg-gray-600 transition-all font-semibold text-sm sm:text-base"
           >
             Clear
           </button>
@@ -248,29 +250,29 @@ const JsonDiff: React.FC = () => {
 
         {/* Error Display */}
         {error && (
-          <div className="mb-6 p-4 bg-red-100 dark:bg-red-900/30 border border-red-300 dark:border-red-700 rounded-lg">
-            <p className="text-red-700 dark:text-red-400 text-sm">{error}</p>
+          <div className="mb-6 p-4 bg-red-50 dark:bg-red-900/20 border-2 border-red-300 dark:border-red-700 rounded-xl">
+            <p className="text-red-700 dark:text-red-400 text-sm font-medium">⚠️ {error}</p>
           </div>
         )}
 
         {/* Stats */}
         {diffs.length > 0 && (
-          <div className="mb-6 grid grid-cols-2 md:grid-cols-4 gap-4">
-            <div className="bg-gray-100 dark:bg-gray-700 p-4 rounded-lg">
-              <p className="text-sm text-gray-600 dark:text-gray-400">Total Differences</p>
-              <p className="text-2xl font-bold text-gray-900 dark:text-white">{stats.total}</p>
+          <div className="mb-6 grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
+            <div className="bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-700 dark:to-gray-800 p-4 rounded-xl border border-gray-300 dark:border-gray-600">
+              <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 font-heading">Total Differences</p>
+              <p className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white font-display">{stats.total}</p>
             </div>
-            <div className="bg-green-100 dark:bg-green-900/30 p-4 rounded-lg">
-              <p className="text-sm text-green-600 dark:text-green-400">Added</p>
-              <p className="text-2xl font-bold text-green-700 dark:text-green-300">{stats.added}</p>
+            <div className="bg-gradient-to-br from-green-100 to-green-200 dark:from-green-900/30 dark:to-green-800/30 p-4 rounded-xl border border-green-300 dark:border-green-700">
+              <p className="text-xs sm:text-sm text-green-700 dark:text-green-400 font-heading">Added</p>
+              <p className="text-xl sm:text-2xl font-bold text-green-800 dark:text-green-300 font-display">{stats.added}</p>
             </div>
-            <div className="bg-red-100 dark:bg-red-900/30 p-4 rounded-lg">
-              <p className="text-sm text-red-600 dark:text-red-400">Removed</p>
-              <p className="text-2xl font-bold text-red-700 dark:text-red-300">{stats.removed}</p>
+            <div className="bg-gradient-to-br from-red-100 to-red-200 dark:from-red-900/30 dark:to-red-800/30 p-4 rounded-xl border border-red-300 dark:border-red-700">
+              <p className="text-xs sm:text-sm text-red-700 dark:text-red-400 font-heading">Removed</p>
+              <p className="text-xl sm:text-2xl font-bold text-red-800 dark:text-red-300 font-display">{stats.removed}</p>
             </div>
-            <div className="bg-yellow-100 dark:bg-yellow-900/30 p-4 rounded-lg">
-              <p className="text-sm text-yellow-600 dark:text-yellow-400">Modified</p>
-              <p className="text-2xl font-bold text-yellow-700 dark:text-yellow-300">{stats.modified}</p>
+            <div className="bg-gradient-to-br from-yellow-100 to-yellow-200 dark:from-yellow-900/30 dark:to-yellow-800/30 p-4 rounded-xl border border-yellow-300 dark:border-yellow-700">
+              <p className="text-xs sm:text-sm text-yellow-700 dark:text-yellow-400 font-heading">Modified</p>
+              <p className="text-xl sm:text-2xl font-bold text-yellow-800 dark:text-yellow-300 font-display">{stats.modified}</p>
             </div>
           </div>
         )}
@@ -278,48 +280,48 @@ const JsonDiff: React.FC = () => {
         {/* Differences */}
         {diffs.length > 0 && (
           <div>
-            <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
-              Differences
+            <h3 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white mb-4 font-heading">
+              Differences Found
             </h3>
-            <div className="space-y-2 max-h-96 overflow-y-auto">
+            <div className="space-y-3 max-h-96 overflow-y-auto pr-2">
               {diffs.map((diff, index) => (
                 <div
                   key={index}
-                  className={`p-4 rounded-lg border ${
+                  className={`p-3 sm:p-4 rounded-xl border-2 transition-all hover:shadow-md ${
                     diff.type === 'added'
-                      ? 'bg-green-50 dark:bg-green-900/20 border-green-300 dark:border-green-700'
+                      ? 'bg-green-50 dark:bg-green-900/20 border-green-400 dark:border-green-700'
                       : diff.type === 'removed'
-                      ? 'bg-red-50 dark:bg-red-900/20 border-red-300 dark:border-red-700'
-                      : 'bg-yellow-50 dark:bg-yellow-900/20 border-yellow-300 dark:border-yellow-700'
+                      ? 'bg-red-50 dark:bg-red-900/20 border-red-400 dark:border-red-700'
+                      : 'bg-yellow-50 dark:bg-yellow-900/20 border-yellow-400 dark:border-yellow-700'
                   }`}
                 >
-                  <div className="flex items-start justify-between mb-2">
-                    <span className="font-mono text-sm text-gray-900 dark:text-gray-100">
+                  <div className="flex items-start justify-between mb-3 gap-2">
+                    <span className="font-mono text-xs sm:text-sm text-gray-900 dark:text-gray-100 break-all flex-1">
                       {diff.path}
                     </span>
                     <span
-                      className={`px-2 py-1 rounded text-xs font-medium ${
+                      className={`px-2 sm:px-2.5 py-1 rounded-lg text-[10px] sm:text-xs font-bold uppercase tracking-wide whitespace-nowrap ${
                         diff.type === 'added'
-                          ? 'bg-green-200 dark:bg-green-800 text-green-800 dark:text-green-200'
+                          ? 'bg-green-200 dark:bg-green-800 text-green-900 dark:text-green-200'
                           : diff.type === 'removed'
-                          ? 'bg-red-200 dark:bg-red-800 text-red-800 dark:text-red-200'
-                          : 'bg-yellow-200 dark:bg-yellow-800 text-yellow-800 dark:text-yellow-200'
+                          ? 'bg-red-200 dark:bg-red-800 text-red-900 dark:text-red-200'
+                          : 'bg-yellow-200 dark:bg-yellow-800 text-yellow-900 dark:text-yellow-200'
                       }`}
                     >
-                      {diff.type.toUpperCase()}
+                      {diff.type}
                     </span>
                   </div>
                   {diff.type === 'modified' && (
-                    <div className="grid grid-cols-2 gap-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                       <div>
-                        <p className="text-xs text-gray-600 dark:text-gray-400 mb-1">Old Value:</p>
-                        <pre className="text-xs font-mono text-gray-900 dark:text-gray-100 bg-white dark:bg-gray-800 p-2 rounded">
+                        <p className="text-[10px] sm:text-xs text-gray-600 dark:text-gray-400 mb-1.5 font-semibold">Old Value:</p>
+                        <pre className="text-[10px] sm:text-xs font-mono text-gray-900 dark:text-gray-100 bg-white dark:bg-gray-800 p-2 sm:p-3 rounded-lg overflow-x-auto border border-gray-200 dark:border-gray-700">
                           {formatValue(diff.oldValue)}
                         </pre>
                       </div>
                       <div>
-                        <p className="text-xs text-gray-600 dark:text-gray-400 mb-1">New Value:</p>
-                        <pre className="text-xs font-mono text-gray-900 dark:text-gray-100 bg-white dark:bg-gray-800 p-2 rounded">
+                        <p className="text-[10px] sm:text-xs text-gray-600 dark:text-gray-400 mb-1.5 font-semibold">New Value:</p>
+                        <pre className="text-[10px] sm:text-xs font-mono text-gray-900 dark:text-gray-100 bg-white dark:bg-gray-800 p-2 sm:p-3 rounded-lg overflow-x-auto border border-gray-200 dark:border-gray-700">
                           {formatValue(diff.newValue)}
                         </pre>
                       </div>
@@ -327,16 +329,16 @@ const JsonDiff: React.FC = () => {
                   )}
                   {diff.type === 'added' && (
                     <div>
-                      <p className="text-xs text-gray-600 dark:text-gray-400 mb-1">Value:</p>
-                      <pre className="text-xs font-mono text-gray-900 dark:text-gray-100 bg-white dark:bg-gray-800 p-2 rounded">
+                      <p className="text-[10px] sm:text-xs text-gray-600 dark:text-gray-400 mb-1.5 font-semibold">Value:</p>
+                      <pre className="text-[10px] sm:text-xs font-mono text-gray-900 dark:text-gray-100 bg-white dark:bg-gray-800 p-2 sm:p-3 rounded-lg overflow-x-auto border border-gray-200 dark:border-gray-700">
                         {formatValue(diff.newValue)}
                       </pre>
                     </div>
                   )}
                   {diff.type === 'removed' && (
                     <div>
-                      <p className="text-xs text-gray-600 dark:text-gray-400 mb-1">Value:</p>
-                      <pre className="text-xs font-mono text-gray-900 dark:text-gray-100 bg-white dark:bg-gray-800 p-2 rounded">
+                      <p className="text-[10px] sm:text-xs text-gray-600 dark:text-gray-400 mb-1.5 font-semibold">Value:</p>
+                      <pre className="text-[10px] sm:text-xs font-mono text-gray-900 dark:text-gray-100 bg-white dark:bg-gray-800 p-2 sm:p-3 rounded-lg overflow-x-auto border border-gray-200 dark:border-gray-700">
                         {formatValue(diff.oldValue)}
                       </pre>
                     </div>
@@ -348,9 +350,13 @@ const JsonDiff: React.FC = () => {
         )}
 
         {diffs.length === 0 && json1 && json2 && !error && (
-          <div className="p-4 bg-green-100 dark:bg-green-900/30 border border-green-300 dark:border-green-700 rounded-lg text-center">
-            <p className="text-green-700 dark:text-green-400 font-medium">
-              ✓ No differences found - JSON objects are identical
+          <div className="p-4 sm:p-6 bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20 border-2 border-green-400 dark:border-green-700 rounded-xl text-center">
+            <div className="text-4xl sm:text-5xl mb-3">✓</div>
+            <p className="text-green-800 dark:text-green-300 font-bold text-base sm:text-lg font-heading">
+              No differences found
+            </p>
+            <p className="text-green-700 dark:text-green-400 text-sm mt-1">
+              JSON objects are identical
             </p>
           </div>
         )}

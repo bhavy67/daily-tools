@@ -33,14 +33,13 @@ import {
   Briefcase,
   Receipt,
   Activity,
-  SpellCheck,
   WrapText,
   ListOrdered,
 } from 'lucide-react';
 import type { Tool } from '../types';
 
 export const tools: Tool[] = [
-  // Formatters & Validators
+  // Most Important Tools First
   {
     id: 'json-formatter',
     name: 'JSON Formatter',
@@ -50,6 +49,17 @@ export const tools: Tool[] = [
     category: 'Formatters',
     keywords: ['json', 'format', 'beautify', 'validate', 'minify', 'pretty print'],
   },
+  {
+    id: 'json-diff',
+    name: 'JSON Diff Checker',
+    description: 'Compare two JSON objects and see differences',
+    icon: GitCompare,
+    path: '/tool/json-diff',
+    category: 'Formatters',
+    keywords: ['json', 'diff', 'compare', 'difference', 'changes'],
+  },
+  
+  // Other Formatters & Validators
   {
     id: 'json-minifier',
     name: 'JSON Minifier',
@@ -259,15 +269,6 @@ export const tools: Tool[] = [
     keywords: ['diff', 'compare', 'text', 'difference', 'changes'],
   },
   {
-    id: 'json-diff',
-    name: 'JSON Diff Checker',
-    description: 'Compare two JSON objects and see differences',
-    icon: GitCompare,
-    path: '/tool/json-diff',
-    category: 'QA & Compare',
-    keywords: ['json', 'diff', 'compare', 'difference', 'changes'],
-  },
-  {
     id: 'emoji-unicode',
     name: 'Emoji ⇄ Unicode',
     description: 'Convert between emoji and Unicode',
@@ -284,15 +285,6 @@ export const tools: Tool[] = [
     path: '/tool/find-replace',
     category: 'Text Tools',
     keywords: ['find', 'replace', 'search', 'regex', 'text'],
-  },
-  {
-    id: 'grammar-checker',
-    name: 'Grammar & Spell Checker',
-    description: 'Check grammar, spelling, and punctuation',
-    icon: SpellCheck,
-    path: '/tool/grammar-checker',
-    category: 'Text Tools',
-    keywords: ['grammar', 'spell', 'check', 'punctuation', 'writing', 'text'],
   },
   {
     id: 'remove-line-breaks',
